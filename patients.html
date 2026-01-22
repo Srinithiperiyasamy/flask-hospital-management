@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin | Patients</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 30px;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .info {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .back {
+            display: block;
+            margin-top: 40px;
+            text-align: center;
+            color: #aeeaff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🧑‍🦽 Patients List</h1>
+
+<div class="grid">
+    {% for a in appointments %}
+    <div class="card">
+        <div class="avatar">👤</div>
+
+        <h3>{{ a.patient_name }}</h3>
+
+        <div class="info">
+            🎂 Age: {{ a.patient_age }} <br>
+            🩺 Problem: {{ a.problem }} <br>
+            🆔 Patient ID: {{ a.patient_id }}
+        </div>
+    </div>
+    {% else %}
+    <p>No patients found</p>
+    {% endfor %}
+</div>
+
+<a class="back" href="{{ url_for('admin_dashboard') }}">⬅ Back to Dashboard</a>
+
+</body>
+</html>

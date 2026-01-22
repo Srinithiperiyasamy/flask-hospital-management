@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medical Reports</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='card/style.css') }}">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Patient</h2>
+    <a href="/patient">🏠 Dashboard</a>
+    <a href="#">📄 Reports</a>
+    <a href="/logout">🚪 Logout</a>
+</div>
+
+<div class="content">
+    <h1>📄 Medical Reports</h1>
+
+    <div class="card-grid">
+        <div class="report-card">
+            <h2>Blood Test</h2>
+            <p>Date: 12-Dec-2025</p>
+            <p>Status: Normal</p>
+            <button class="btn">Download</button>
+        </div>
+
+        <div class="report-card">
+            <h2>X-Ray</h2>
+            <p>Date: 18-Dec-2025</p>
+            <p>Status: Minor Issue</p>
+            <button class="btn">Download</button>
+        </div>
+
+        <div class="report-card">
+            <h2>ECG</h2>
+            <p>Date: 20-Dec-2025</p>
+            <p>Status: Normal</p>
+            <button class="btn">Download</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

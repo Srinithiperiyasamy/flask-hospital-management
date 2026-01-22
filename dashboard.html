@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Patient</h2>
+    <a href="{{ url_for('patient_book_appointment') }}">📅 Book Appointment</a>
+    <a href="{{ url_for('patient_appointments') }}">📄 My Appointments</a>
+    <a href="{{ url_for('logout') }}">🚪 Logout</a>
+</div>
+
+<div class="content">
+    <h1>Patient Dashboard</h1>
+
+    <div class="card-grid">
+        <a href="{{ url_for('patient_book_appointment') }}">
+            <div class="card">📅 Book Appointment</div>
+        </a>
+
+        <a href="{{ url_for('patient_appointments') }}">
+            <div class="card">📄 My Appointments</div>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

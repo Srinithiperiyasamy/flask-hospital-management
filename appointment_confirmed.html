@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Appointment Confirmed</title>
+
+<style>
+body {
+    font-family: 'Segoe UI';
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    padding: 40px;
+}
+
+.card {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+h2 {
+    color: #2e7d32;
+}
+
+.info {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.info p {
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+button {
+    margin-top: 25px;
+    padding: 12px 20px;
+    background: #185a9d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>✅ Appointment Confirmed</h2>
+
+    <div class="info">
+        <p><strong>Patient:</strong> {{ appointment.patient_name }}</p>
+        <p><strong>Age:</strong> {{ appointment.patient_age }}</p>
+        <p><strong>Doctor:</strong> {{ appointment.doctor.name }}</p>
+        <p><strong>Date:</strong> {{ appointment.date }}</p>
+        <p><strong>Time:</strong> {{ appointment.time }}</p>
+        <p><strong>Problem:</strong> {{ appointment.problem }}</p>
+    </div>
+
+    <a href="{{ url_for('patient_dashboard') }}">
+        <button>⬅ Back to Dashboard</button>
+    </a>
+</div>
+
+</body>
+</html>

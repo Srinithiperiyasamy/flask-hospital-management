@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Billing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='card/style.css') }}">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Admin</h2>
+    <a href="/admin">🏠 Dashboard</a>
+    <a href="#">💳 Billing</a>
+    <a href="/logout">🚪 Logout</a>
+</div>
+
+<div class="content">
+    <h1>💳 Billing Management</h1>
+
+    <table class="table">
+        <tr>
+            <th>Patient</th>
+            <th>Doctor</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+
+        <tr>
+            <td>Ravi Kumar</td>
+            <td>Dr. Arun</td>
+            <td>₹1200</td>
+            <td><span class="badge paid">Paid</span></td>
+            <td><button class="btn">View</button></td>
+        </tr>
+
+        <tr>
+            <td>Sita Devi</td>
+            <td>Dr. Meena</td>
+            <td>₹800</td>
+            <td><span class="badge pending">Pending</span></td>
+            <td><button class="btn">Pay</button></td>
+        </tr>
+
+        <tr>
+            <td>Karthik</td>
+            <td>Dr. Rahul</td>
+            <td>₹1500</td>
+            <td><span class="badge paid">Paid</span></td>
+            <td><button class="btn">Invoice</button></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

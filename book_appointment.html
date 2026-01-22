@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book Appointment</title>
+
+<style>
+body {
+    font-family: 'Segoe UI';
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 40px;
+}
+
+.form-box {
+    max-width: 500px;
+    background: white;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div style="
+          background-color: {% if category == 'success' %}#d4edda{% else %}#f8d7da{% endif %};
+          color: {% if category == 'success' %}#155724{% else %}#721c24{% endif %};
+          padding: 15px;
+          border-radius: 10px;
+          margin-bottom: 20px;
+          text-align: center;
+          font-weight: bold;
+      ">
+          {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+
+
+<div class="form-box">
+    <h2>📅 Book Appointment</h2>
+
+    <form method="POST">
+        <label>Patient Name</label>
+        <input type="text" name="patient_name" required>
+
+        <label>Age</label>
+        <input type="number" name="patient_age" required>
+
+        <label>Health Problem</label>
+        <textarea name="problem" required></textarea>
+
+        <label>Select Doctor</label>
+        <select name="doctor_id" required>
+            {% for d in doctors %}
+                <option value="{{ d.id }}">
+                    {{ d.name }} — {{ d.specialization }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <label>Date</label>
+        <input type="date" name="date" required>
+
+        <label>Time</label>
+        <input type="time" name="time" required>
+
+        <button type="submit">Confirm Appointment</button>
+    </form>
+</div>
+
+</body>
+</html>

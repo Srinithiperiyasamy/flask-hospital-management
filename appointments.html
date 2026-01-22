@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Appointments</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f9;
+            padding: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<h2>📋 My Appointments</h2>
+
+{% for a in appointments %}
+    <div class="card">
+        <b>Doctor:</b> {{ a.doctor.name }} <br>
+        <b>Doctor:</b> {{ a.doctor.id }} <br>
+        <b>Date:</b> {{ a.date }} <br>
+        <b>Time:</b> {{ a.time }} <br>
+        <b>Problem:</b> {{ a.problem }}
+    </div>
+{% else %}
+    <p>No appointments booked yet.</p>
+{% endfor %}
+
+<a href="{{ url_for('patient_dashboard') }}">⬅ Back</a>
+
+</body>
+</html>

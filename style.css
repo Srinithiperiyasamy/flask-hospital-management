@@ -1,0 +1,62 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f4f6f9;
+}
+
+.login-bg {
+    height: 100vh;
+    background: linear-gradient(120deg, #2196f3, #00bcd4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background: white;
+    padding: 30px;
+    width: 300px;
+    border-radius: 10px;
+    animation: zoom 0.5s ease;
+}
+
+.login-box input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+@keyframes zoom {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.title {
+    text-align: center;
+    margin: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    font-size: 22px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.blue { background: #2196f3; }
+.green { background: #4caf50; }
+.orange { background: #ff9800; }
+.red { background: #f44336; }
